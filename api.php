@@ -8,7 +8,7 @@
     function parser() {
         $servers = simplexml_load_file("servers.xml");
         foreach ($servers as $server) {
-            if (getStatus((string)$server->ip, (string)$server->port)) {
+            if (getStatus((string)$server->host, (string)$server->port)) {
                 $server->online = "true";
             }
             else {
